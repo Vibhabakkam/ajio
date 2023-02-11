@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajio.com</title>
     <style>
-        * {
+        *{
             margin: 0%;
             padding: 0%;
         }
@@ -20,9 +20,11 @@
         }
 
         .navbar {
-            height: 150px;
+            height: 120px;
             width: 100%;
-            border: 1px solid black;
+            border-top: 3px solid #2b4052;
+            border-bottom: 1px solid #2b4052;
+            margin-top: -10px;
         }
 
         .navtop {
@@ -60,9 +62,8 @@
         .navdown {
             height: 70px;
             width: 100%;
-            border: 1px solid black;
             display: flex;
-            justify-content: space-between;
+
 
         }
 
@@ -71,18 +72,111 @@
             font-size: 60px;
             height: 70px;
             width: 140px;
-            border: 1px solid black;
             margin-left: 100px;
         }
+
+        .navdown>div:nth-child(3) {
+            font-size: 25px;
+        }
+
 
         .navmenu {
             display: flex;
             justify-content: space-between;
             height: 60px;
-            width: 600px;
-            border: 1px solid black;
-            margin-right: 200px;
+            width: 800px;
+            margin-left: 200px;
         }
+        .navmenu>div:nth-child(1){
+            margin-top: 20px;
+        }
+        .navmenu>div:nth-child(2){
+            margin-top: 20px;
+        }
+        .navmenu>div:nth-child(3){
+            margin-top: 20px;
+        }
+        .navmenu>div:nth-child(4){
+            margin-top: 20px;
+        }
+        .navmenu>div:nth-child(5){
+            margin-top: 20px;
+        }
+        .navmenu>div:nth-child(6){
+            height: 40px;
+            width: 280px;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding-left: 20px;
+            padding-top: 7px;
+            font-size: 20px;
+            color: #2b4052;
+            margin-top: 10px;
+            background-color: #fffded;
+        }
+        .navmenu>div:nth-child(6) input{
+            font-size: 17px;
+            width: 250px;
+            border: none;
+            outline: none;
+            margin-left: -10px;
+        }
+        .menuicon {
+            height: 40px;
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+
+        .menuicon>div:nth-child(1) {
+            height: 40px;
+            width: 40px;
+            border-radius: 30px;
+            background-color: #2b4052;
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+
+        .menuicon>div:nth-child(2) {
+            height: 40px;
+            width: 40px;
+            border-radius: 30px;
+            background-color: #2b4052;
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+        .body{
+            height: 2000px;
+            width: 100%;
+            border: 1px solid black;
+            margin-top: 5px;
+        }
+        .body>div:nth-child(1){
+            width: 100%;
+        }
+        .body>div:nth-child(1) img{
+            width: 100%;
+        }
+        .body>div:nth-child(2) img{
+            width: 100%;
+        }
+        .body>div:nth-child(4) img{
+            width: 100%;
+        }
+        .body>div:nth-child(5){
+            display: flex;
+        }
+        .body>div:nth-child(5) img{
+            width: 33.3%;
+        }
+        .body>div:nth-child(6) img{
+            width: 100%;
+        }
+        
     </style>
 </head>
 
@@ -115,10 +209,37 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
+                <div class="menuicon">
+                    <div><i class="fa-solid fa-heart"></i></div>
+                    <div><i class="fa-solid fa-bag-shopping"></i></div>
+                </div>
             </div>
         </div>
-        <div>
-            <i class="fa-solid fa-heart"></i>
+        <div class="body">
+            
+            <div>
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Urgency-72Hrs-LiveNow.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/UHP-D-TopBanner-AJIOMANIA-5090.gif" alt="">
+            </div>
+            <div>
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/IDBI-1440x128-23.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Rewards-Sectionheader.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Rewards-EarnUpto5.jpg" alt="">
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Rewards-Relianceone.jpg" alt="">
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-Rewards-inviteFriends.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://assets.ajio.com/cms/AJIO/WEB/D-UHP-SponsorBrands-SectionHeader.jpg" alt="">
+            </div>
+             <div>
+
+             </div>
         </div>
         </div>
 </body>
