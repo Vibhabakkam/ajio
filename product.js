@@ -6,7 +6,7 @@ window.onload = function(){
 
     array = [];
     for(var i=0; i<dataFromLS.length; i++){
-        array += `<div><img src="${ dataFromLS[i].proImg}" /><br/><h1>${dataFromLS[i].proName}</h1><br/><p>${dataFromLS[i].proPrice}</p></div>`
+        array += `<div id = "picture2"><img src="${ dataFromLS[i].proImg}" /><br/><h1>${dataFromLS[i].proName}</h1><br/><p>${dataFromLS[i].proPrice}</p></div>`
         // console.log(dataFromLS[i].proName)
     }
     var divFromHTML = document.getElementById("screen")
