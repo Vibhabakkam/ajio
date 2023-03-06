@@ -5,10 +5,10 @@ function register(event) {
     var userPhone = document.getElementById("userPhone").value;
     var userEmail = document.getElementById("userEmail").value;
     var userPassword = document.getElementById("userPassword").value;
-    var userData = { name: userName, number : userPhone, email: userEmail, password: userPassword }
+    var ajiouserData = { name: userName, number : userPhone, email: userEmail, password: userPassword }
 
     // storing data from js to ls
-    var dataFromLS = JSON.parse(localStorage.getItem("userData")) || [];
+    var dataFromLS = JSON.parse(localStorage.getItem("ajiouserData")) || [];
     console.log(dataFromLS, 'dataFromLS')
     var flag = false;
     for (var i = 0; i < dataFromLS.length; i++) {
@@ -23,8 +23,8 @@ function register(event) {
     } else if (userPassword.length < 8) {
         alert("password must be more than 8 digit")
     } else {
-        dataFromLS.push(userData);
-        localStorage.setItem("userData", JSON.stringify(dataFromLS));
+        dataFromLS.push(ajiouserData);
+        localStorage.setItem("ajiouserData", JSON.stringify(dataFromLS));
         document.getElementById("userName").value = " ";
         document.getElementById("userPhone").value = " ";
         document.getElementById("userEmail").value = " ";
@@ -39,9 +39,9 @@ function login(event) {
     event.preventDefault();
     var userEmail = document.getElementById("email").value;
     var userPassword = document.getElementById("password").value;
-    var userData = { email: userEmail, password: userPassword }
+    var ajiouserData = { email: userEmail, password: userPassword }
 
-    var dataFromLS = JSON.parse(localStorage.getItem("userData")) || [];
+    var dataFromLS = JSON.parse(localStorage.getItem("ajiouserData")) || [];
     console.log(dataFromLS, 'dataFromLS')
     var flag = false;
     for (var i = 0; i < dataFromLS.length; i++) {
@@ -50,8 +50,8 @@ function login(event) {
         }
     }
     if (flag === true) {
-        dataFromLS.push(userData);
-        localStorage.setItem("userData", JSON.stringify(dataFromLS));
+        dataFromLS.push(ajiouserData);
+        localStorage.setItem("ajiouserData", JSON.stringify(dataFromLS));
         document.getElementById("email").value = " ";
         document.getElementById("password").value = " ";
         window.location.href = '/ajio.html';
@@ -65,7 +65,7 @@ function login(event) {
 var gettingEmail;
 function forgetPassword() {
 
-    var dataFromLS = JSON.parse(localStorage.getItem("userData"));
+    var dataFromLS = JSON.parse(localStorage.getItem("ajiouserData"));
     var userEmail = document.getElementById("email").value;
     gettingEmail = userEmail;
 
@@ -93,7 +93,7 @@ function forgetPassword() {
 
 function newPassword() {
     var userPassword = document.getElementById("password").value;
-    var dataFromLS = JSON.parse(localStorage.getItem("userData"));
+    var dataFromLS = JSON.parse(localStorage.getItem("ajiouserData"));
     //    alert ("worked")
 
 
@@ -102,7 +102,7 @@ function newPassword() {
             dataFromLS[i].password = userPassword
         }
     }
-    localStorage.setItem('userData', JSON.stringify(dataFromLS));
+    localStorage.setItem('ajiouserData', JSON.stringify(dataFromLS));
     gettingEmail = "";
 
     window.location.href = '/ajiologin.html';
