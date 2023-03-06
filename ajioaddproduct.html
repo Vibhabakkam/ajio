@@ -10,6 +10,101 @@
         #lablediv {
             margin-left: 50px;
         }
+        #regdiv {
+            height: 40px;
+            width: 120px;
+            border: none;
+            font-size: 20px;
+            background-color: #d5a249;
+            color: white;
+            margin-left: 50px;
+            margin-top: 15px;
+        }
+
+        #seconddiv {
+            display: flex;
+        }
+
+        #seconddiv>div:nth-child(1) {
+            border: 1px solid #457896;
+            height: 50px;
+            width: 170px;
+            display: flex;
+            margin-left: 20px;
+        }
+
+        #seconddiv>div:nth-child(1)>img {
+            height: 40px;
+            width: 40px;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        #seconddiv>div:nth-child(2) {
+            border: 1px solid #df4a32;
+            margin-left: 20px;
+            height: 50px;
+            width: 170px;
+            display: flex;
+        }
+
+        #seconddiv>div:nth-child(2)>img {
+            height: 40px;
+            width: 50px;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        #lablediv {
+            margin-left: 50px;
+        }
+
+        #proName {
+            height: 40px;
+            width: 300px;
+            border-color: gray;
+            margin-left: 50px;
+            outline: none;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        #proImg {
+            height: 40px;
+            width: 300px;
+            border-color: gray;
+            margin-left: 50px;
+            outline: none;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        #proPrice {
+            height: 40px;
+            width: 300px;
+            border-color: gray;
+            margin-left: 50px;
+            outline: none;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        #para {
+            font-size: 15px;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        #ajiodiv {
+            height: 600px;
+            width: 400px;
+            margin-left: 550px;
+            margin-top: 100px;
+        }
+
+        #ajiodiv>div:nth-child(1) {
+            margin-left: 80px;
+        }
     </style>
 </head>
 
@@ -33,10 +128,10 @@
         </div>
         <div>
             <h1>add products</h1>
-            <input id="proName" type="url" placeholder="product img"> <br>
-            <input id="proImg" type="text" placeholder="product name"> <br>
+            <input id="proName" type="url" placeholder="product name"> <br>
+            <input id="proImg" type="text" placeholder="product img"> <br>
             <input id="proPrice" type="number" placeholder="product price"> <br>
-            <button onclick="addToLS()"> add product</button>
+            <button id="regdiv" onclick="addToLS()"> add product</button>
             <script src="server.js"></script>
         </div>
     </div>

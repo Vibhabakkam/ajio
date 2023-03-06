@@ -144,6 +144,15 @@
                 <p id="para"> By Signing In, I agree to <span style="color:#457896; font-size: 15px;">Terms and
                         Conditions.</span></p>
                 <script src="server.js"></script>
+                <script>
+                    window.onload = function (){
+                        var dataFromLS = JSON.parse(localStorage.getItem("currentUser"));
+                        if (dataFromLS){
+                            window.location.href ='/ajio.html'
+                            alert("already register")
+                        }
+                    }
+                </script>
             </form>
         </div>
     </div>

@@ -50,12 +50,17 @@ function login(event) {
         }
     }
     if (flag === true) {
+        alert("login succecfully")
         dataFromLS.push(ajiouserData);
         localStorage.setItem("ajiouserData", JSON.stringify(dataFromLS));
         document.getElementById("email").value = " ";
         document.getElementById("password").value = " ";
+        var User = {};
+        User = { email: userEmail }
+        localStorage.setItem("currentUser", JSON.stringify(User));
+
+
         window.location.href = '/ajio.html';
-        alert("login succecfully")
     } else {
 
         alert("Wrong cred, Please check your email and password");
@@ -116,13 +121,13 @@ function addToLS() {
     var Imge = document.getElementById("proImg").value;
     var Price = document.getElementById("proPrice").value;
 
-    var userProduct = {  proImg:Imge, proName: Name, proPrice:Price }
+    var ajiouserProduct = {  proImg:Imge, proName: Name, proPrice:Price }
     // store deta from java script to local storage
-    var dataFromLS = JSON.parse(localStorage.getItem("userProduct")) || [];
+    var dataFromLS = JSON.parse(localStorage.getItem("ajiouserProduct")) || [];
     console.log(dataFromLS, 'dataFromLS')
   
-    dataFromLS.push(userProduct);
-    localStorage.setItem("userProduct", JSON.stringify(dataFromLS));
+    dataFromLS.push(ajiouserProduct);
+    localStorage.setItem("ajiouserProduct", JSON.stringify(dataFromLS));
     alert("product added")
 
     var Name = document.getElementById("proName").value ="" ;
