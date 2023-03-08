@@ -9,17 +9,64 @@
 </head>
 
 <body>
+   
+
     <h1>Cart</h1>
+    <div id="cartProducts">
+
+    </div>
 
     <script>
         window.onload = function () {
             alert("working")
-            var dataFromLS = JSON.parse(localStorage.getItem("currentUser"))
+            var dataFromLS = JSON.parse(localStorage.getItem("currentUser"));
             if ( !dataFromLS){
               
-                window.location.href ='/ajiologin.html'
+                window.location.href ='/login.html'
                 alert("cant access cart without login")
+            } else {
+                var dataFromLS = JSON.parse(localStorage.getItem("userData"));
+                var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+                var divFromHTML = document.getElementById("cartProducts");
+                var cartProducts;
+                var flag = false;
+                for (var i=0; i <dataFromLS.length ; i++){
+                    if(dataFromLS[i].email === currentUser["current-User-email"] && dataFromLS[i].cartProducts  ){
+                        cartProducts = dataFromLS[i].cartProducts;
+                        flag = true;
+                    } 
+                }
+                if (flag === false){
+                    alert("no product added to cart")
+                } else {
+                    console.log (cartProducts, "cartProducts");
+                    var productsWithHTML = [];
+                    for(var i=0; i <cartProducts.length ; i++){
+                        productsWithHTML += `<div><img src ='${cartProducts[i].proImg}'/><h1>${cartProducts[i].proName}<h1><p>${cartProducts[i].proPrice}</p></div>`;
+                    }
+                    divFromHTML.innerHTML = productsWithHTML;
+                }
             }
+        };
+
+
+        function buyproducts(){
+            var dataFromLS = JSON.parse(localStorage.getItem("userData"));
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            var updatedUser = [];
+            for (var i=0; i <dataFromLS.length ; i++){
+                if(dataFromLS[i].email === currentUser["currentUser-email"] && dataFromLS[i].cartProducts  ){
+                    dataFromLS[i].cartProducts = [];
+                    updatedUser.push(dataFromLS[i])
+                } else{
+                    updatedUser.push(dataFromLS[i])
+                }
+
+            }
+            localStorage.setItem("userData", JSON.stringify(updatedUser));
+            window.location.href = '/Home.html';
+            alert ("products will deliver soon")
+
         }
     </script>
 </body>
