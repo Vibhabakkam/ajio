@@ -1,74 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <style>
+        .navbar {
+            height: 120px;
+            width: 100%;
+            border-top: 3px solid #2b4052;
+            border-bottom: 1px solid #2b4052;
+            margin-top: -10px;
+        }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+        .navtop {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: right;
+        }
 
-<body>
-   
+        .navtop>div:nth-child(1) {
 
-    <h1>Cart</h1>
-    <div id="cartProducts">
+            height: 30px;
+            width: 120px;
+            color: grey;
+            padding-top: 10px;
+        }
 
-    </div>
+        .navtop>div:nth-child(2) {
+            height: 30px;
+            width: 110px;
+            padding-left: 10px;
+            color: grey;
+            padding-top: 10px;
+        }
 
-    <script>
-        window.onload = function () {
-            alert("working")
-            var dataFromLS = JSON.parse(localStorage.getItem("currentUser"));
-            if ( !dataFromLS){
-              
-                window.location.href ='/login.html'
-                alert("cant access cart without login")
-            } else {
-                var dataFromLS = JSON.parse(localStorage.getItem("userData"));
-                var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-                var divFromHTML = document.getElementById("cartProducts");
-                var cartProducts;
-                var flag = false;
-                for (var i=0; i <dataFromLS.length ; i++){
-                    if(dataFromLS[i].email === currentUser["current-User-email"] && dataFromLS[i].cartProducts  ){
-                        cartProducts = dataFromLS[i].cartProducts;
-                        flag = true;
-                    } 
-                }
-                if (flag === false){
-                    alert("no product added to cart")
-                } else {
-                    console.log (cartProducts, "cartProducts");
-                    var productsWithHTML = [];
-                    for(var i=0; i <cartProducts.length ; i++){
-                        productsWithHTML += `<div><img src ='${cartProducts[i].proImg}'/><h1>${cartProducts[i].proName}<h1><p>${cartProducts[i].proPrice}</p></div>`;
-                    }
-                    divFromHTML.innerHTML = productsWithHTML;
-                }
-            }
-        };
+        .navtop>div:nth-child(3) {
+            height: 30px;
+            width: 120px;
+            color: white;
+            background-color: black;
+            padding-top: 10px;
+            margin-right: 100px;
+        }
 
+        .navdown {
+            height: 70px;
+            width: 100%;
+            display: flex;
 
-        function buyproducts(){
-            var dataFromLS = JSON.parse(localStorage.getItem("userData"));
-            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-            var updatedUser = [];
-            for (var i=0; i <dataFromLS.length ; i++){
-                if(dataFromLS[i].email === currentUser["currentUser-email"] && dataFromLS[i].cartProducts  ){
-                    dataFromLS[i].cartProducts = [];
-                    updatedUser.push(dataFromLS[i])
-                } else{
-                    updatedUser.push(dataFromLS[i])
-                }
-
-            }
-            localStorage.setItem("userData", JSON.stringify(updatedUser));
-            window.location.href = '/Home.html';
-            alert ("products will deliver soon")
 
         }
-    </script>
-</body>
 
+        .navdown>div:nth-child(1) {
+            color: #2b4052;
+            font-size: 60px;
+            height: 70px;
+            width: 140px;
+            margin-left: 100px;
+        }
+
+        .navdown>div:nth-child(3) {
+            font-size: 25px;
+        }
+
+
+        .navmenu {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            width: 800px;
+            margin-left: 200px;
+        }
+
+        .navmenu>div:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        .navmenu>div:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        .navmenu>div:nth-child(3) {
+            margin-top: 20px;
+        }
+
+        .navmenu>div:nth-child(4) {
+            margin-top: 20px;
+        }
+
+        .navmenu>div:nth-child(5) {
+            margin-top: 20px;
+        }
+
+        .navmenu>div:nth-child(6) {
+            height: 40px;
+            width: 280px;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding-left: 20px;
+            padding-top: 7px;
+            font-size: 20px;
+            color: #2b4052;
+            margin-top: 10px;
+            background-color: #fffded;
+        }
+
+        .navmenu>div:nth-child(6) input {
+            font-size: 17px;
+            width: 250px;
+            border: none;
+            outline: none;
+            margin-left: -10px;
+            background-color: #fffded;
+        }
+
+        .menuicon {
+            height: 40px;
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+
+        .menuicon>div:nth-child(1) {
+            height: 40px;
+            width: 40px;
+            border-radius: 30px;
+            background-color: #2b4052;
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+
+        .menuicon>div:nth-child(2) {
+            height: 40px;
+            width: 40px;
+            border-radius: 30px;
+            background-color: #2b4052;
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+        #cartdiv{
+       width: 100%;
+    }
+
+    #cartProducts {
+      width: 100%;
+      display: flex;
+      margin-top: 40px;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    #picture2 {
+      height: 500px;
+      width: 80%;
+      margin-left: 20px;
+
+    }
+
+    #picture2>img {
+      /* border: 1px solid black; */
+      height: 350px;
+      width: 25%;
+
+      /* border: 1px solid red; */
+    }
+
+    #picture2>h1 {
+      font-size: 20px;
+    }
+
+    #picture2>p {
+      font-size: 20px;
+      margin-left: 100px;
+      margin-bottom: 50px;
+
+    }
+
+    #cartbutton {
+      height: 40px;
+      width: 150px;
+      border: none;
+      font-size: 20px;
+      background-color: #d3a246;
+      color: white;
+      margin-left: 200px;
+      margin-top: -300px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+        <div class="navtop">
+            <div>
+                Sign In / Join Ajio
+            </div>
+            <div>
+                customer care
+            </div>
+            <div>
+                Visit AjioLuxe
+            </div>
+        </div>
+        <div class="navdown">
+            <div>
+                AJIO
+            </div>
+            <div class="navmenu">
+                <div>MEN</div>
+                <div>WOMEN</div>
+                <div>KIDS</div>
+                <div>INDIE</div>
+                <div> HOME AND KITCHEN</div>
+                <div>
+                    <input type="text" placeholder="SEARCH AJIO">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="menuicon">
+                <div><i class="fa-solid fa-heart"></i></div>
+                <div><i class="fa-solid fa-bag-shopping"></i></div>
+            </div>
+        </div>
+    </div>
+    <h1>Cart</h1>
+    <div id="cartProducts"></div>
+    <button id="cartbutton" onclick="buyProduct()">Buy Product</button>
+    <script>
+      window.onload = function () {
+        var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (!dataFromLs) {
+          window.location.href = "/ajiologin.html";
+          alert("Please Log in first");
+        } else {
+          var dataFromLs = JSON.parse(localStorage.getItem("ajiouserData"));
+          var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+          var divFromHtml = document.getElementById("cartProducts");
+
+          var cartProducts;
+          var flag = false;
+          for (var i = 0; i < dataFromLs.length; i++) {
+            if (
+              dataFromLs[i].email === currentUser["current-user-email"] &&
+              dataFromLs[i].cartProducts
+            ) {
+              cartProducts = dataFromLs[i].cartProducts;
+              flag = true;
+            }
+          }
+          if (flag === false) {
+            alert("noproduct added to cart, Go and buy some product");
+          } else {
+            console.log(cartProducts, "cartProducts");
+            var productsWithHTML = [];
+            for (var i = 0; i < cartProducts.length; i++) {
+              productsWithHTML += `<div id = "picture2"><img src='${cartProducts[i].image}'><br><h1>${cartProducts[i].name}</h1><p>${cartProducts[i].price}</p></div>`;
+            }
+          }
+          divFromHtml.innerHTML = productsWithHTML;
+        }
+      };
+
+      function buyProduct() {
+        var dataFromLs = JSON.parse(localStorage.getItem("ajiouserData"));
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        var updatedUser = [];
+        for (var i = 0; i < dataFromLs.length; i++) {
+          if (
+            dataFromLs[i].email === currentUser["current-user-email"] &&
+            dataFromLs[i].cartProducts
+          ) 
+          {
+            dataFromLs[i].cartProducts = [];
+            updatedUser.push(dataFromLs[i]);
+          } 
+          else {
+            updatedUser.push(dataFromLs[i]);
+          }
+        }
+
+        localStorage.setItem("ajiouserData",JSON.stringify(updatedUser));
+        window.location.href='/ajio.html';
+        alert("Product will be dilivered soon");
+      }
+    </script>
+  </body>
 </html>
