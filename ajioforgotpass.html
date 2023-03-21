@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>forgot password</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>forgot password</title>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    #maindiv {
+      margin-top: 150px;
+      margin-left: 550px;
+      height: 500px;
+      width: 400px;
+
+    }
+
+    #email {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    #paradiv {
+      height: 40px;
+      width: 300px;
+      background-color: #d5a249;
+      color: white;
+      font-size: 20px;
+      border: none;
+      margin-left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="maindiv">
     <h1>Forget Password</h1>
     <div id="change">
-      <input type="email" id="email" placeholder="Email" />
-      <button onclick="forgotPassword(event)">submit Email</button>
+      <input type="email" id="email" placeholder=" Enter your Email" />
+      <button id="paradiv" onclick="forgotPassword(event)">submit Email</button>
     </div>
+  </div>
 
-    <script src="/server.js"></script>
-  </body>
+  <script src="/server.js"></script>
+</body>
+
 </html>
