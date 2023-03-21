@@ -1,41 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
-    <style>
-      body {
-        text-align: center;
-      }
-      form {
-        width: 18%;
-        margin: auto;
-        height: 150px;
-        border: 1px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Register</h1>
-    <form onsubmit="register(event)">
-      <label>Name</label><br />
-      <input id="userName" type="text" /><br />
-      <label>Email</label><br />
-      <input id="userEmail" type="email" /><br />
-      <label>Password</label><br />
-      <input id="userPassword" type="password" /><br />
-      <input type="submit" value="register" />
-    </form>
-    <script src="/server.js"></script>
 
-    <script>
-      var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
-      if (dataFromLs) {
-        window.location.href ="/ajio.html";
-        alert("Already Login");
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    p {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    #maindiv {
+      margin-top: 150px;
+      margin-left: 550px;
+      height: 500px;
+      width: 400px;
+
+    }
+
+    #imgdiv {
+      display: flex;
+      height: 60px;
+      width: 350px;
+      margin-bottom: 15px;
+      margin-left: 25px;
+      margin-top: 20px;
+    }
+
+    #imgdiv>div:nth-child(1) {
+      height: 50px;
+      width: 150px;
+      border: 1px solid #475995;
+      display: flex;
+      color: #475995;
+      margin-left: 15px;
+    }
+
+    #imgdiv>div:nth-child(1)>img {
+      height: 40px;
+      width: 40px;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+
+    #imgdiv>div:nth-child(1)>p {
+      margin-top: 10px;
+      margin-left: 8px;
+      font-size: 18px;
+    }
+
+    #imgdiv>div:nth-child(2) {
+      height: 50px;
+      width: 150px;
+      border: 1px solid #df4a32;
+      display: flex;
+      color: #df4a32;
+      margin-left: 15px;
+
+    }
+
+    #imgdiv>div:nth-child(2)>img {
+      height: 50px;
+      width: 50px;
+
+    }
+
+    #imgdiv>div:nth-child(2)>p {
+      margin-top: 12px;
+      margin-left: 8px;
+      font-size: 18px;
+    }
+
+    #lablediv {
+      font-size: 20px;
+      margin-left: 50px;
+
+    }
+
+    #userName {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+      margin-bottom: 15px;
+    }
+
+    #userEmail {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+      margin-bottom: 15px;
+    }
+
+    #userPassword {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+    }
+
+    #paradiv {
+      height: 40px;
+      width: 300px;
+      background-color: #d5a249;
+      color: white;
+      font-size: 20px;
+      border: none;
+      margin-left: 50px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="maindiv">
+    <h1>Welcome to AJIO</h1>
+    <p>Join/Sign In Using</p>
+    <div id="imgdiv">
+      <div>
+        <img src="https://seeklogo.com/images/F/facebook-icon-logo-C61047A9E7-seeklogo.com.png" alt="">
+        <p>FACEBOOK</p>
+      </div>
+      <div>
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/010/353/285/original/colourful-google-logo-on-white-background-free-vector.jpg"
+          alt="">
+        <p>GOOGLE</p>
+      </div>
+    </div>
+    <form onsubmit="register(event)">
+      <label id="lablediv">Name</label><br />
+      <input id="userName" type="text" placeholder="type your name" /><br />
+      <label id="lablediv">Email</label><br />
+      <input id="userEmail" type="email" placeholder="type your email" /><br />
+      <label id="lablediv">Password</label><br />
+      <input id="userPassword" type="password" placeholder="type your Password" /><br />
+      <input id="paradiv" type="submit" value="CONTINUE" />
+      <p>By Signing In, I agree to <span style="color: #475995;">Terms and Conditions.</span></p>
+    </form>
+  </div>
+  <script src="/server.js"></script>
+
+  <script>
+    var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
+    if (dataFromLs) {
+      window.location.href = "/ajio.html";
+      alert("Already Login");
+    }
+  </script>
+</body>
+
 </html>
