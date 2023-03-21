@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>add products</title>
     <style>
-        #screen{
-            width: 100%;
-            height: 400px;
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
-        #screen > div{
-            width: 18%; 
-            height: 200px;
-            border: 1px solid red;   
-        }
+ * {
+      margin: 0%;
+      padding: 0%;
+    }
+    #maindiv {
+      margin-top: 150px;
+      margin-left: 550px;
+      height: 500px;
+      width: 400px;
+      
+    }
+    #name {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+      margin-bottom: 15px;
+      margin-top: 30px;
+    }
+
+    #image {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+      margin-bottom: 15px;
+    }
+
+    #price {
+      height: 40px;
+      width: 300px;
+      font-size: 20px;
+      margin-left: 50px;
+    }
+
+    #paradiv {
+      height: 40px;
+      width: 300px;
+      background-color: #d5a249;
+      color: white;
+      font-size: 20px;
+      border: none;
+      margin-left: 50px;
+      margin-top: 30px;
+    }
 
     </style>
 </head>
+
 <body>
-    <h1>Add your product</h1>
-    <input id="name" type="text" placeholder="Type product name" /><br/>
-    <input id="image" type="text" placeholder="Type product url link for image" /><br/>
-    <input  id="price" type="number" placeholder="Type product price" /><br/>
-    <button onclick="addToLS()" >Submit Product</button>
-    <script src="/server.js"></script>
+    <div id="maindiv">
+        <h1>Add your products on Ajio</h1>
+        <input id="name" type="text" placeholder="Type product name" /><br />
+        <input id="image" type="text" placeholder="Type product url link for image" /><br />
+        <input id="price" type="number" placeholder="Type product price" /><br />
+        <button id="paradiv" onclick="addToLS()">Submit Product</button>
+        <script src="/server.js"></script>
+    </div>
 </body>
+
 </html>
