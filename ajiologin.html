@@ -83,6 +83,7 @@
       margin-left: 50px;
 
     }
+
     #email {
       height: 40px;
       width: 300px;
@@ -108,7 +109,8 @@
       margin-left: 50px;
       margin-top: 30px;
     }
-    #regdiv{
+
+    #regdiv {
       border: none;
       margin-left: 70px;
       margin-right: 15px;
@@ -139,20 +141,29 @@
       <label id="lablediv">Email</label><br />
       <input id="email" type="email" placeholder="type your email" /><br />
       <label id="lablediv">Password</label><br />
-      <input id="password" type="password" placeholder="type your password"/><br />
+      <input id="password" type="password" placeholder="type your password" /><br />
       <input id="paradiv" type="submit" /><br />
     </form>
-    <button  id="regdiv" onclick="window.location.href='/ajioregister.html'"><u>Register</u></button>
+    <button id="regdiv" onclick="window.location.href='/ajioregister.html'"><u>Register</u></button>
     <a href="/ajioforgotpass.html">Forget Password </a>
     <p>By Signing In, I agree to <span style="color: #475995;">Terms and Conditions.</span></p>
   </div>
   <script src="/server.js"></script>
   <script>
-    var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
-    if (dataFromLs) {
-      window.location.href = "/ajio.html";
-      alert("Already Login");
+    window.onload = function () {
+      var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
+      if (dataFromLs) {
+        window.location.href = '/index.html'
+        alert("Already Login");
+      }
     }
+
+
+    // var dataFromLs = JSON.parse(localStorage.getItem("currentUser"));
+    // if (dataFromLs) {
+    //   alert("Already Login");
+    //   window.location.href = "/index.html";
+    // }
   </script>
 </body>
 

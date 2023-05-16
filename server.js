@@ -60,7 +60,7 @@ function login(event){
         var user ={};
         user["current-user-email"]= userEmail;
         localStorage.setItem("currentUser",JSON.stringify(user));
-        window.location.href="/ajio.html";
+        window.location.href="/index.html";
         alert("Login sucessful");
     }
     else{
